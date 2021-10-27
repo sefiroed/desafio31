@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylemsn.css">
+</head>
+<body>
+    <main class='container'>
+        <h1>Desafío Clase 27</h1>
+        <h2 class='mt-4'>Centro de Mensajes</h2>
+        <form class="form" action="/index" method="post" role="form" autocomplete="off">
+            <div class='form-group'>
+                <label for='email'>Email</label>
+                <input class='form-control' type='email' name='email' id='email' required>
+            </div>
+            <div class='form-group'>
+                <label for='nombre'>Nombre</label>
+                <input class='form-control' type='text' name='nombre' id='nombre' required>
+            </div>
+            <div class='form-group'>
+                <label for='apellido'>Apellido</label>
+                <input class='form-control' type='text' name='apellido' id='apellido' required>
+            </div>
+            <div class='form-group'>
+                <label for='alias'>Alias</label>
+                <input class='form-control' type='text' name='alias' id='alias' required>
+            </div>
+            <div class='form-group'>
+                <label for='edad'>Edad</label>
+                <input class='form-control' type='number' name='edad' id='edad' required>
+            </div>
+            <div class='form-group'>
+                <label for='url'>URL</label>
+                <input class='form-control' type='text' name='avatar' id='avatar' required>
+            </div>
+            <div class='form-group'>
+                <label for='mensaje'>Mensaje</label>
+                <input class='form-control' type='mensaje' name='mensaje' id='mensaje' required>
+            </div>
+            <div class='mt-2'>
+                <input type='submit' class='btn btn-warning'> 
+            </div>
+        </form>
+        
+        <div class="text-left">
+            <button class="btn btn-success my-3" onclick="location.href = '/login'">Ir a Login</button>
+        </div>
+        
+    </main>
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js" integrity="sha512-oFOCo2/3DtjrJG4N27BjSLQWoiBv171sK6a+JiWjp/7agxC2nCUP358AqzxkBUb5jX8g6CYLPdSKQTbC0weCwA==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/normalizr@3.6.1/dist/normalizr.browser.min.js"></script>
+<script src="./main.js"></script>
+</html>

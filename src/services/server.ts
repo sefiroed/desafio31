@@ -4,6 +4,7 @@ import session from 'express-session';
 import passport from '../middlewares/auth';
 import path from 'path';
 import exphbs from 'express-handlebars';
+import { errorHandler } from '../middlewares/errorhandler';
 
 const app = express();
 
@@ -50,6 +51,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.use(errorHandler);
 
 app.use('/api', mainRouter);
 

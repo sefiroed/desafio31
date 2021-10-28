@@ -4,6 +4,7 @@ import Server from './services/server';
 import cluster from 'cluster';
 import os from 'os';
 import { argumentos } from './middlewares/auth';
+import { logger } from './utils/logger';
 
 
 const PORT = Config.PORT;
@@ -30,11 +31,12 @@ connectDb().then(() => {
 
   }
   else {
-    const server = Server.listen(PORT, () => {
-      console.log(`Servidor escuchando en el puerto ${PORT}`);
+    const PORT = Config.PORT;
+    Server.listen(PORT, () => {
+      logger.info(
+        `Servidor inicializado en http://localhost:${PORT} - PID WORKER ${process.pid}`,
+      );
     });
-  
-    server.on('error', (error) => console.log(`Error en servidor: ${error}`));
-
+    Server.on('error', error => logger.error(`Error en el servidor: ${error}`));
   }
 });
